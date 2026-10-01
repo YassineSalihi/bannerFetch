@@ -17,16 +17,60 @@ public class BannerMain {
         String institute = sc.nextLine();
 
         // what if the user didnt want to add its editor
-        System.out.println("Enter your text editor/IDE: ");
-        String editor = sc.nextLine();
+        System.out.println("Enter your text editor/IDE: (press enter to skip)");
+        String editor = sc.nextLine().trim();
+        if (editor.isEmpty()) {
+            editor = "N/A";
+        }
 
         System.out.println("How many programming languages did you learn: (answer with number)");
-        int ans = sc.nextInt();
-        int i = 0;
-        int tab[]={};
-        while (i < ans){
-            System.out.println("Enter the language");
+        int ans = Integer.parseInt(sc.nextLine().trim());
+        // bad code : int ans = sc.nextInt();
+        String[] tab = new String[ans];
+        for (int i = 0; i < tab.length; i++) {
+            System.out.println("Enter language " + (i + 1) + ": ");
+            tab[i] = sc.nextLine();
         }
+        String languages = String.join(", ", tab);
+
+        System.out.println("How many Computer languages do you know: (answer with number)");
+        int ans2 = Integer.parseInt(sc.nextLine().trim());
+        String[] tab2 = new String[ans2];
+        for (int i = 0; i < tab2.length; i++) {
+            System.out.println("Enter Computer language " + (i + 1) + ": ");
+            tab2[i] = sc.nextLine();
+        }
+        String clanguages = String.join(", ", tab2);
+
+        System.out.println("How many Real languages do you speak: (answer with number)");
+        int ans3 = Integer.parseInt(sc.nextLine().trim());
+        String[] tab3 = new String[ans3];
+        for (int i = 0; i < tab3.length; i++) {
+            System.out.println("Enter Real language " + (i + 1) + ": ");
+            tab3[i] = sc.nextLine();
+        }
+        String rlanguages = String.join(", ", tab3);
+
+        System.out.println("Enter your first email: ");
+        String email1 = sc.nextLine().trim();
+
+        System.out.println("Enter your second email (if you don't have it, skip by clicking enter): ");
+        String email2 = sc.nextLine().trim();
+
+        System.out.println("Enter your LinkedIn(press enter to skip): ");
+        String linkedin = sc.nextLine().trim();
+
+        System.out.println("Enter your X account(press enter to skip): ");
+        String x = sc.nextLine().trim();
+//        int i = 0;
+//        String[] tab = new String[ans];
+//        while (i < tab.length){
+//            System.out.println("Enter the language: ");
+//            tab[i] = sc.nextLine();
+//            System.out.println(tab[i]);
+//            i++;
+//        }
+//        System.out.println(tab[0] + " " + tab[1]);
 
         System.out.println("kkkOOkkkkOO000000000KKXXXXXXXXXXXXXXXNNNNNNNNXXXXXXXXKKKKKKKKKK000000000OOOOOOOO\n" +
                 "kkOOOOkkkkOO0O000000KKXXXXXXXXXXXXXXNNNNNNNNNNNXXXXXXXKKKKKKKKK0000000000OOOOOOO" + "\t"+ firstname +"@" + lastname +"------------------------------------------------------------" + "\n" +
@@ -35,17 +79,17 @@ public class BannerMain {
                 "kkkkkkkkkkOOOKKKXXXXKXXXXXXXXXXXXXXNNNNNNNNNNNNNNNXXXXXXXXXKKKKKKKK000000000OOOO" + "\t" + "Host: " + institute + "\n" +
                 "kkxkkkkkkkOOO0KKNXXXXXXXXXXXXXXXXXXNNNNNNNWNNNNNNNNXXXXXXXXXKKKKKKKK0000000OOOOO" + "\t" + "Texte editor/IDE: " + editor + "\n" +
                 "kxxkkOOOkkOOO0KKNXXXXXXXNNXXXNXX0xoloxk0NNWWWNNNNNNNXXXXXXXKKKKKKKK00000000OOOOO\t" + ".\n" +
-                "kxxkkkkOkkOOO0KKXKXXXXXXNNNNXXo. ..  ....cKWWWNNNNNNXXXXXXKKKKK00000000OOOOOOOOO" + "\t" + "Languages.Programming: " + lprogramming
-                "kxxxkxkkOkOOO00KNKXXXKKXNNNNKloxdddollccc'.lNNNNNNNXXXXKKKKKKKK0000000OOOOOOOOOO\n" +
-                "kkxxkkkkOOOOO00KXKXXXXXXNNNNd000kkxxolcclc..ONNNNNNXXXKKKKKKKK000000000OOOOOOOOO\n" +
-                "kkxxxxxkkOOOO00KXKXXXXKXNNNNxOOkkkxdc,,;col.lNNNNXXXKKKKKKK000000000000OOOOOOOOO\n" +
-                "kkxxkxxkkOOOOO0KNKKXXXKKNNNN0kl::dkc,.':;lo,:0XXXXKKK000000000000000000OOOOOOOOO\n" +
-                "kkxxkxxkkOOOO00KXKKXXXXXXNNN0OxdxOxcc:;:clocccOXKKKK00OOOOOOOO0000000000OOOOOOOO\n" +
-                "kkxkxxxxxkOOOO0KXKKXXXXXXXXN0O00Oko::::cloo:clKKK0000OOOkkkkkOOOOOOOO00OOOOOOOOO\n" +
-                "xxxkkkkkkOOOOO0KXKKXXXKKXNNNXOOkkkoc,;;;cllc0KXK00OOOOkkkxxxxkkkOOOOOOOOOOOOOOOO\n" +
-                "dxdxxxkkkOOOOOO0XKKXXXXXXNNNXXOdooo:,,;;::,dXXK00OOOkkkkkxxxxxxkOOOOO00OOOOOOOOO\n" +
-                "ddddddxxkkOOOOO0NK0KXXXXXNNNXNXd;ldo:;;,'.,OXKK00OkkkxxkkkddxxxxkOOO0000OO0OOOOO\n" +
-                "odoodddxkkkkkOO0K00KKKXXXNXXXX0ko'''..  .;lkKK00OkkkxxxxxxxxxkkkkOOOOOOOOO00OkOO\n" +
+                "kxxkkkkOkkOOO0KKXKXXXXXXNNNNXXo. ..  ....cKWWWNNNNNNXXXXXXKKKKK00000000OOOOOOOOO" + "\t" + "Languages.Programming: " + languages + "\n" +
+                "kxxxkxkkOkOOO00KNKXXXKKXNNNNKloxdddollccc'.lNNNNNNNXXXXKKKKKKKK0000000OOOOOOOOOO" + "\t" + "Languages.Computer: " + clanguages + "\n" +
+                "kkxxkkkkOOOOO00KXKXXXXXXNNNNd000kkxxolcclc..ONNNNNNXXXKKKKKKKK000000000OOOOOOOOO" + "\t" + "Languages.Computer: " + rlanguages + "\n" +
+                "kkxxxxxkkOOOO00KXKXXXXKXNNNNxOOkkkxdc,,;col.lNNNNXXXKKKKKKK000000000000OOOOOOOOO\t" + ".\n" +
+                "kkxxkxxkkOOOOO0KNKKXXXKKNNNN0kl::dkc,.':;lo,:0XXXXKKK000000000000000000OOOOOOOOO\t" + "Contact\n" +
+                "kkxxkxxkkOOOO00KXKKXXXXXXNNN0OxdxOxcc:;:clocccOXKKKK00OOOOOOOO0000000000OOOOOOOO\t" + "Email.Personal: " + email1 + "\n" +
+                "kkxkxxxxxkOOOO0KXKKXXXXXXXXN0O00Oko::::cloo:clKKK0000OOOkkkkkOOOOOOOO00OOOOOOOOO\t" + "Email.Personal: " + email2 + "\n" +
+                "xxxkkkkkkOOOOO0KXKKXXXKKXNNNXOOkkkoc,;;;cllc0KXK00OOOOkkkxxxxkkkOOOOOOOOOOOOOOOO\t" + "LinkedIn: " + linkedin + "\n" +
+                "dxdxxxkkkOOOOOO0XKKXXXXXXNNNXXOdooo:,,;;::,dXXK00OOOkkkkkxxxxxxkOOOOO00OOOOOOOOO\t" + "X: " + x + "\n" +
+                "ddddddxxkkOOOOO0NK0KXXXXXNNNXNXd;ldo:;;,'.,OXKK00OkkkxxkkkddxxxxkOOO0000OO0OOOOO\t" + ".\n" +
+                "odoodddxkkkkkOO0K00KKKXXXNXXXX0ko'''..  .;lkKK00OkkkxxxxxxxxxkkkkOOOOOOOOO00OkOO\n" + "Githb stats\n" +
                 "dddodddxkkkkkkkOOOO000OO0kxOkocdOkdc,.';:llldkkkkkxxddddxkOkkkkkkkOOOkxxxkkkkkOO\n" +
                 "dxododxxkkkkxkkkOkxdoodl::cxdl'lOkxdc;;:cllc.clooooollllldxxxxxxxxkkkxdddddxxkkk\n" +
                 "odooddxxkxxxxxkOkddxlc:d;'cddo:.cxdlclc:ccc'.c::;:ccc::::lddddddddxkkdolcloddxkk\n" +
