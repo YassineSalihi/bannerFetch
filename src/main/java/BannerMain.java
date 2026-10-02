@@ -62,6 +62,20 @@ public class BannerMain {
 
         System.out.println("Enter your X account(press enter to skip): ");
         String x = sc.nextLine().trim();
+
+        System.out.println("Enter your GitHub username (press enter to skip): ");
+        String github = sc.nextLine().trim();
+
+        String ghRepos = "N/A", ghFollowers = "N/A", ghFollowing = "N/A", ghStars = "N/A";
+        if (!github.isEmpty()) {
+            GithubStats stats = GithubStats.fetch(github);
+            if (stats != null) {
+                ghRepos = String.valueOf(stats.publicRepos);
+                ghFollowers = String.valueOf(stats.followers);
+                ghFollowing = String.valueOf(stats.following);
+                ghStars = String.valueOf(stats.totalStars);
+            }
+        }
 //        int i = 0;
 //        String[] tab = new String[ans];
 //        while (i < tab.length){
@@ -71,6 +85,7 @@ public class BannerMain {
 //            i++;
 //        }
 //        System.out.println(tab[0] + " " + tab[1]);
+
 
         System.out.println("kkkOOkkkkOO000000000KKXXXXXXXXXXXXXXXNNNNNNNNXXXXXXXXKKKKKKKKKK000000000OOOOOOOO\n" +
                 "kkOOOOkkkkOO0O000000KKXXXXXXXXXXXXXXNNNNNNNNNNNXXXXXXXKKKKKKKKK0000000000OOOOOOO" + "\t"+ firstname +"@" + lastname +"------------------------------------------------------------" + "\n" +
@@ -89,11 +104,11 @@ public class BannerMain {
                 "xxxkkkkkkOOOOO0KXKKXXXKKXNNNXOOkkkoc,;;;cllc0KXK00OOOOkkkxxxxkkkOOOOOOOOOOOOOOOO\t" + "LinkedIn: " + linkedin + "\n" +
                 "dxdxxxkkkOOOOOO0XKKXXXXXXNNNXXOdooo:,,;;::,dXXK00OOOkkkkkxxxxxxkOOOOO00OOOOOOOOO\t" + "X: " + x + "\n" +
                 "ddddddxxkkOOOOO0NK0KXXXXXNNNXNXd;ldo:;;,'.,OXKK00OkkkxxkkkddxxxxkOOO0000OO0OOOOO\t" + ".\n" +
-                "odoodddxkkkkkOO0K00KKKXXXNXXXX0ko'''..  .;lkKK00OkkkxxxxxxxxxkkkkOOOOOOOOO00OkOO\n" + "Githb stats\n" +
-                "dddodddxkkkkkkkOOOO000OO0kxOkocdOkdc,.';:llldkkkkkxxddddxkOkkkkkkkOOOkxxxkkkkkOO\n" +
-                "dxododxxkkkkxkkkOkxdoodl::cxdl'lOkxdc;;:cllc.clooooollllldxxxxxxxxkkkxdddddxxkkk\n" +
-                "odooddxxkxxxxxkOkddxlc:d;'cddo:.cxdlclc:ccc'.c::;:ccc::::lddddddddxkkdolcloddxkk\n" +
-                "ooooooodxxxxdk0xkllk:;:ox'.llol:,:lcld::cc::ll::::;cool:,;coooollloxxl:::clodxxx\n" +
+                "odoodddxkkkkkOO0K00KKKXXXNXXXX0ko'''..  .;lkKK00OkkkxxxxxxxxxkkkkOOOOOOOOO00OkOO\t" + "Githb stats\n" +
+                "dddodddxkkkkkkkOOOO000OO0kxOkocdOkdc,.';:llldkkkkkxxddddxkOkkkkkkkOOOkxxxkkkkkOO\t" + "Repos: " + ghRepos + "\n" +
+                "dxododxxkkkkxkkkOkxdoodl::cxdl'lOkxdc;;:cllc.clooooollllldxxxxxxxxkkkxdddddxxkkk\t" + "Followers: " + ghFollowers + "\n" +
+                "odooddxxkxxxxxkOkddxlc:d;'cddo:.cxdlclc:ccc'.c::;:ccc::::lddddddddxkkdolcloddxkk\t" + "Following: " + ghFollowing + "\n" +
+                "ooooooodxxxxdk0xkllk:;:ox'.llol:,:lcld::cc::ll::::;cool:,;coooollloxxl:::clodxxx\t" + "Stars: " + ghStars + "\n" +
                 "lollolloodddkOkxol:k;,:lkc,:loxo:;;:clllodxxdd:,,;:ddodol;.'cocc::odxo:;:cloxxxx\n" +
                 "llcccclllooxOxkxcc'o;,clkd:;oodxc;l:;:coxxol;,..,codoocold'..:;:c:odxdc;cclodxxx\n" +
                 "llc:::clllo0Ooddx;'l,'odOxllclodd,od:;cl:'',,'.;:;lod;clooo...,::coxxxoccclodxxk\n" +
